@@ -1,0 +1,3 @@
+rs.png - /usr/share/fbxkb/images/
+ba.png - /usr/share/fbxkb/images/
+10-keyboard.conf - /etc/X11/xorg.conf.d/

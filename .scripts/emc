@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Script will open emacs client if server is running or
+# create server and then run client if one is not running.
+# You can just use $ emacsclient -c -a ""
+ps aux | grep 'emacs *--daemon' || DISPLAY='' emacs --daemon -nw --no-splash
+
+if [ "x$1" = "x-nw" ]; then
+  exec emacsclient "$@"
+else
+  exec emacsclient -nc "$@"
+fi

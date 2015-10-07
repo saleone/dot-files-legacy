@@ -1,0 +1,29 @@
+URxvt.saveLines: 10000
+URxvt*.scrollBar: FALSE
+URxvt.foreground: #22ff44
+URxvt.background: [100]#f8f8f8
+
+URxvt.font: xft:Inconsolata:antialias=true:pixelsize=15
+URxvt.boldFont: xft:Monospace:bold:antialias=true:pixelsize=14
+URxvt.italicFont: xft:Monospace:italic:antialias=true:pixelsize=14
+URxvt.boldItalicFont: xft:Monospace:bolditalic:antialias=true:pixelsize=14
+
+urxvt.color0: #ffffff
+urxvt.color1: #B21818
+urxvt.color2: #18B218
+urxvt.color3: #B26818
+urxvt.color4: #1818B2
+urxvt.color5: #B218B2
+urxvt.color6: #18B2B2
+urxvt.color7: #B2B2B2
+urxvt.colorBD: #000000
+urxvt.color8: #686868
+urxvt.color9: #FF5454
+urxvt.color10: #54FF54
+urxvt.color11: #FFFF54
+urxvt.color12: #5454FF
+urxvt.color13: #FF54FF
+urxvt.color14: #54FFFF
+urxvt.color15: #000000
+
+URxvt.urlLauncher: firefox

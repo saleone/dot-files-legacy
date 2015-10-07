@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sleep 3 &&
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+redshift &
+devilspie2 -f ~/.devilspie2/ &
+sleep 1 &&
+urxvt -title bg_player_term -e ncmpcpp -s visualizer &
+sleep 1 &&
+conky &

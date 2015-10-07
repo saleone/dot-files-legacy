@@ -1,0 +1,87 @@
+# Conky configuration script.
+# Filename: Horizontal Info conkyrc
+# Author: Tanmay Gandhi
+# Modified: Sasa Savic <savic-sasa@outlook.com>
+# To start, in a terminal - conky -d -c <path to .conkyrc>
+# Or as a startup application - conky -d -p15 -c <path to .conkyrc>
+
+# Locale, fonts and font sizes.
+use_xft yes
+xftfont Ubuntu:style=Bold:size=10
+override_utf8_locale yes
+
+# Conky performance
+update_interval 0.5 
+total_run_times 0
+double_buffer yes
+no_buffers yes
+net_avg_samples 2
+text_buffer_size 1024
+top_name_width 22
+
+# Execute it in its own window
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Font colors
+default_color 000000# mid grey
+
+# Header colors
+color0 ef2929
+
+# Minimum dimensions
+minimum_size 1520 0
+default_bar_size 100 10
+default_graph_size 100 10
+
+# Conky positioning, roughly centred.
+alignment top_left
+gap_x 300
+gap_y 300
+
+########### Stuff after "TEXT" will appear onscreen ###########################
+TEXT
+${goto 15}Ubuntu running on ${nodename} \
+${goto 256}Memory & Disks:\
+${goto 560}Network:
+########### End of headings line ##############################################
+${goto 15}${if_match ${cpu cpu0} > 50}CPU: Grafting!${goto 100}\
+$cpubar cpu0}  ${cpu cpu0}%${else}CPU Average:${goto 100}\
+${cpubar cpu0}  ${cpu cpu0}%${endif}\
+${goto 256}Root:${goto 330}${fs_used /}\
+${goto 380}${fs_bar /}  ${fs_size /}\
+${goto 560}Upload: \
+${goto 635}${upspeedgraph wlan0 10,100 B7B2AD 0099FF}
+########### End of first line #################################################
+${goto 15}${if_match ${cpu cpu1} > 70}Core 1: on fire!${goto 100}\
+${cpugraph cpu1} ${cpu cpu1}%${else}Core 1:${goto 100}\
+${cpubar cpu1}  ${cpu cpu1}%${endif}\
+${goto 256}Data:${goto 330}${fs_used /home/sasa/Data}\
+${goto 380}${fs_bar /home/sasa/Data}  ${fs_size /home/sasa/Data}\
+${goto 560}Download: \
+${goto 635}${downspeedgraph wlan0 10,100 B7B2AD FF0000}
+########### End of second line ################################################
+${goto 15}${if_match ${cpu cpu2} > 70}Core 2: on fire!${goto 100}\
+${cpubar cpu2} ${cpu cpu2}%${else}Core 2:${goto 100}\
+${cpubar cpu2} ${cpu cpu2}%${endif}\
+${goto 256}Windows:${goto 330}${fs_used /home/sasa/Win}\
+${goto 380}${fs_bar /home/sasa/Win}  ${fs_size /home/sasa/Win}\
+${goto 560}Totals:${goto 635}${totalup wlan0}  -  ${totaldown wlan0}
+
+${goto 15}${if_match ${cpu cpu3} > 70}Core 3: on fire!${goto 100}\
+${cpubar cpu3} ${cpu cpu3}%${else}Core 3:${goto 100}\
+${cpubar cpu3} ${cpu cpu3}%${endif}\
+${goto 256}Ram:${goto 330}${memmax}${goto 380}${membar 10,100}  $memperc%\
+${goto 560}Today:${goto 635}${execi 120 vnstat -i wlan0 | \
+awk '/today/{print $8 $9}'}
+########### End of forth line #################################################
+${goto 15}${if_match ${cpu cpu4} > 70}Core 4: on fire!${goto 100}\
+${cpubar cpu4}${color}  ${cpu cpu4}%${else}Core 4:${goto 100}\
+${cpubar cpu4}  ${cpu cpu4}%${endif}\
+${goto 256}Swap:${goto 330}${swapmax}\
+${goto 380}${swapbar 10,100}  ${swapperc}%\
+${goto 560}Month:${goto 635}${execi 120 vnstat -m -i wlan0| \
+awk '/'$(date +"%b")'/{print $9 $10}'}
+########### End of fifth line and this configuration ##########################

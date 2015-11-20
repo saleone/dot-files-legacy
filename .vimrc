@@ -189,3 +189,9 @@ if 'VIRTUALENV_ENV' in os.environ:
     activate_path = os.path.join(base_dir, "bin/activate_this.py")
     execfile(activate_path, dict(__file__=activate_this))
 EOF
+
+"
+" Winresizer
+" -----------
+"
+"  Nice way to resize windows by pressing C-e and using hjkl.

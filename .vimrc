@@ -9,7 +9,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'jimsei/winresizer'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp'
 Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 

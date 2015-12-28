@@ -11,6 +11,10 @@ Plug 'terryma/vim-expand-region'
 Plug 'jimsei/winresizer'
 Plug 'ctrlpvim/ctrlp'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " ======================

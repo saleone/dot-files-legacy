@@ -178,18 +178,6 @@ let g:pymode_lint_write = 0
 let g:pymode_folding = 0
 let g:pymode_indent = 0
 
-" Add virtualenv to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUALENV_ENV' in os.environ:
-    base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, base_dir)
-    activate_path = os.path.join(base_dir, "bin/activate_this.py")
-    execfile(activate_path, dict(__file__=activate_this))
-EOF
-
 "
 " Winresizer
 " -----------
